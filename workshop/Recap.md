@@ -21,4 +21,10 @@
 # Day 3
 
 * Datenbanken
+* PHPMyAdmin
 * MySQL (Tabellen anlegen, befüllen, abfragen …)
+* PDO in PHP
+* SQL Injections
+* Scopes (Gültigkeitsbereiche von Variablen)
+* XMLHttpRequest
+* Callbacks und asynchroner Code
