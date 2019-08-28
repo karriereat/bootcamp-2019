@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400,400i,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    --main-color: hsl(180, 100%, 25%);
+    --main-color-hover: hsl(180, 90%, 35%);
+}
+
+main {
+    margin: 2rem auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 48rem;
+}
+
+/* ---------------------------------- *\
+    Heading
+\* ---------------------------------- */
+
+.fancy-heading {
+    display: inline-block;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.fancy-heading:after {
+    display: block;
+    position: relative;
+    top: -.25em;
+    left: 1.5em;
+    z-index: -1;
+    outline: .125em solid var(--main-color-hover);
+    content: '';
+}
+
+/* ---------------------------------- *\
+    Anchors
+\* ---------------------------------- */
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-color-hover);
+    text-decoration: underline;
+}
+
+/* ---------------------------------- *\
+    Form Elements
+\* ---------------------------------- */
+
+label,
+.form-label,
+.form-element {
+    width: 100%;
+    display: block;
+}
+
+.form-label {
+    margin-top: 1rem;
+    margin-bottom: .25rem;
+}
+
+.form-element {
+    margin-bottom: 1rem;
+    padding: .25rem .5rem;
+    height: 2rem;
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid lightgray;
+    background: white;
+    border-radius: 3px;
+}
+
+textarea {
+    min-height: 12rem;
+}
+
+button.form-element {
+    border: none;
+    color: white;
+    background: var(--main-color);
+}
+
+button.form-element:hover {
+    background: var(--main-color-hover);
+    cursor: pointer;
+}
+
+::placeholder {
+    color: lightgray;
+}
+
+.errors {
+    color: red;
+}
+
+/* ---------------------------------- *\
+    Articles
+\* ---------------------------------- */
+
+.articles {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--main-color), transparent);
+}
+
+.article-content {
+    overflow: hidden;
+    margin: 1px;
+    padding-left: 1rem;
+    background: white;
+}
+
+.article h2 {
+    margin-bottom: .25rem;
+}
+
+.article p {
+    margin-top: 0;
+}
+
+/* ---------------------------------- *\
+    Media Queries
+\* ---------------------------------- */
+
+@media (min-width: 24rem) {
+    .fancy-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .fancy-heading {
+        font-size: 3rem;
+    }
+
+    label {
+        display: flex;
+    }
+
+    .form-label {
+        width: 25%;
+        line-height: 2rem;
+    }
+
+    .form-label,
+    .form-element {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

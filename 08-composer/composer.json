@@ -1,0 +1,13 @@
+{
+    "name": "bootcamp/example",
+    "description": "A composer example project",
+    "require": {
+        "symfony/var-dumper": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {"Bootcamp\\": "src/"}
+    },
+    "scripts": {
+        "serve": "php -S localhost:8080 -t ./"
+    }
+}

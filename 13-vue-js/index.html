@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoMVC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+    <section id="app">
+
+        <header>
+            <h1>TodoMVC</h1>
+            <!-- `v-model` adds two-way binding for `data.newTodo` -->
+            <!-- `@keyup.enter` invokes `addTodo` when the enter key is released -->
+            <input type="text"
+                   placeholder="What needs to be done?"
+                   v-model="newTodo"
+                   @keyup.enter="addTodo">
+        </header>
+
+        <!-- only show `<main>` when there are todos -->
+        <!-- `v-cloak` is removed when the Vue instance is ready -->
+        <main v-show="todos.length" v-cloak>
+            <ul>
+                <!-- `v-for` adds a `<li>` for each item in the computed property `filteredTodos` -->
+                <li v-for="todo in filteredTodos" :key="todo.id">
+                    <!-- either show `<template>` and its children or the input field -->
+                    <template v-if="todo != editedTodo">
+                        <!-- `v-model` adds two-way binding for `todos[index].completed` -->
+                        <input type="checkbox" v-model="todo.completed">
+                        <!-- `@dblclick` invokes `editTodo` when you double-click the label -->
+                        <!-- `:class` binds the keys of an object to the `class` attribute -->
+                        <label @dblclick="editTodo(todo)"
+                               :class="{ completed: todo.completed }">
+                            <!-- `{{ ... }}` is the most basic form of data binding, a string interpolation -->
+                            {{ todo.title }}
+                        </label>
+                        <!-- `@click` invokes `removeTodo` when the button is clicked -->
+                        <button @click="removeTodo(todo)">remove</button>
+                    </template>
+                    <!-- `v-else` belongs to the above `v-if` directive -->
+                    <!-- `v-model` adds two-way binding for `todo.title` -->
+                    <!-- `v-todo-focus` is a custom directive (have a look at the JavaScript code) -->
+                    <!-- `@blur` invokes `doneEdit` when the user's focus shifts to another element -->
+                    <!-- `@keyup.enter` also invokes `doneEdit` -->
+                    <!-- `@keyup.esc` invokes `cancelEdit` when the escape key is released -->
+                    <input type="text"
+                           v-else
+                           v-model="todo.title"
+                           v-todo-focus="todo === editedTodo"
+                           @blur="doneEdit(todo)"
+                           @keyup.enter="doneEdit(todo)"
+                           @keyup.esc="cancelEdit(todo)">
+                </li>
+            </ul>
+        </main>
+
+        <!-- only show `<footer>` when there are todos -->
+        <!-- `v-cloak` is removed when the Vue instance is ready -->
+        <footer v-show="todos.length" v-cloak>
+            <!-- `{{ ... }}` is the most basic form of data binding, a string interpolation -->
+            <!-- `pluralize(...)` is a custom filter (have a look at the JavaScript code) -->
+            {{ remaining }} {{ remaining | pluralize('item') }} left
+            <!-- `v-model` adds two-way binding for `data.visibility` -->
+            <select v-model="visibility">
+                <option value="all">all</option>
+                <option value="active">active</option>
+                <option value="completed">completed</option>
+            </select>
+            <label>
+                <!-- `v-model` adds two-way binding for the computed property `allDone` -->
+                <input type="checkbox" v-model="allDone">
+                mark all as completed
+            </label>
+            <!-- `@click` invokes `removeCompleted` when the button is clicked -->
+            <!-- `v-show` shows the element when the JavaScript expression evaluates to `true` -->
+            <button @click="removeCompleted"
+                    v-show="todos.length > remaining">clear completed</button>
+        </footer>
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

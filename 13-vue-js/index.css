@@ -1,0 +1,28 @@
+/* Functionality */
+
+.completed {
+    text-decoration: line-through;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+}
+
+/* Beauty */
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+body {
+    margin: 1em;
+}

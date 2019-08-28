@@ -1,0 +1,6 @@
+config.php
+/web/assets/main.css
+/web/assets/main.js
+
+node_modules
+vendor

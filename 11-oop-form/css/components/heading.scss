@@ -1,0 +1,30 @@
+@import "../config";
+
+.fancy-heading {
+  display: inline-block;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: normal;
+  font-size: 2rem;
+
+  &:after {
+    display: block;
+    position: relative;
+    top: -.25em;
+    left: 1.5em;
+    z-index: -1;
+    outline: .125em solid $main-color-hover;
+    content: '';
+  }
+}
+
+@media (min-width: 24rem) {
+  .fancy-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .fancy-heading {
+    font-size: 3rem;
+  }
+}
