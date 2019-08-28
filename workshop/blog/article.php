@@ -27,8 +27,7 @@ $articleDetail = true;
     <body>
         <main class="page">
             <?php include 'templates/article.php' ?>
+            <?php include 'templates/comment.php' ?>
         </main>
-
-        <script src="scripts.js"></script>
     </body>
 </html>

@@ -20,7 +20,5 @@ $articleDetail = false;
                 <?php include 'templates/article.php' ?>
             <?php endforeach; ?>
         </main>
-
-        <script src="scripts.js"></script>
     </body>
 </html>

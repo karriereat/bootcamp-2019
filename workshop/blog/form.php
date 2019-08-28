@@ -142,6 +142,6 @@ if (!empty($_POST)) {
             </form>
         </main>
 
-        <script src="scripts.js"></script>
+        <script src="/js/form.js"></script>
     </body>
 </html>

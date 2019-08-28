@@ -56,6 +56,4 @@ function submitForm(event) {
 }
 
 var form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', submitForm);
-}
+form.addEventListener('submit', submitForm);
