@@ -7,6 +7,7 @@
         Kommentar
         <textarea name="comment"></textarea>
     </label>
+    <input type="hidden" name="article_id" value="<?php echo $article['id']; ?>">
     <button>Speichern</button>
 </form>
 

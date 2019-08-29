@@ -10,6 +10,7 @@ function submitForm(event) {
     var data = {
         name: form.name.value,
         comment: form.comment.value,
+        article_id: form.article_id.value,
     };
 
     if (!data.name.length) {

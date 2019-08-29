@@ -14,6 +14,8 @@ if($article == false){
     siteNotFound();
 }
 
+$comments = getCommentsByArticleId($connection, $id);
+
 $articleDetail = true;
 
 ?>
