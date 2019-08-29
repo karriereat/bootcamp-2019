@@ -34,8 +34,11 @@
 * Formular per JavaScript (XHR) abschicken
 * Daten in Datenbank schreiben
 * Redirect (PHP und JavaScript)
-* Session Management (Cookies)
+* Cookies
+* Session Management
 * Login für User
+* Hash-Funktion für Passwörter
+* Ordnerstruktur für Deploy vorbereiten
 
 # Day 5
 
