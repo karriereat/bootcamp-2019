@@ -40,3 +40,4 @@
 # Day 5
 
 * Deploy über SFTP (Seite veröffentlichen)
+* Objektorientierung
