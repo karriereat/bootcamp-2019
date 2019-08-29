@@ -15,7 +15,6 @@ if($article == false){
 }
 
 $comments = getCommentsByArticleId($connection, $id);
-
 $articleDetail = true;
 
 ?>

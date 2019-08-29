@@ -8,8 +8,7 @@ ini_set('display_errors', 1);
 $defaultData = [
     'title' => '',
     'text' => '',
-    'email' => '',
-    'author' => '',
+    'user_id' => 1,
     'date' => date('Y-m-d'),
 ];
 
@@ -22,10 +21,11 @@ if (!empty($_POST)) {
     $data = [
         'title' => strip_tags(trim($_POST['title'])),
         'text' => strip_tags(trim($_POST['text'])),
-        'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL),
         'created' => time(),
         'date' => strtotime($_POST['date']),
     ];
+
+    $data = array_merge($defaultData, $data);
 
     // Validate
 
@@ -41,30 +41,9 @@ if (!empty($_POST)) {
         $errors['date'] = 'Bitte Datum angeben';
     }
 
-    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Ungültige E-Mail';
-    }
-
     if (empty($errors)) {
-        $jsonData = json_encode($data);
-
-        if (!is_dir(DIRECTORY) && !is_writable(DIRECTORY)) {
-            $errors['file'] = "Ups, ein fehler ist passiert";
-        }
-
-        if (empty($errors)) {
-
-            $filename = sprintf("%s/%s-article.json", DIRECTORY, microtime(true));
-
-            $fh = fopen($filename, 'wb');
-            fwrite($fh, $jsonData);
-            fclose($fh);
-
-            $success = true;
-            $data = $defaultData;
-
-            header('location: /article.php?id=3');
-        }
+        saveArticle($connection, $data['title'], $data['text'], $data['date'], $data['user_id']);
+        header('location: /articles.php');
     }
 } else {
     $data = $defaultData;
@@ -105,23 +84,6 @@ if (!empty($_POST)) {
                         name="title"
                         placeholder="Mein Artikel"
                         value="<?php echo $data['title']; ?>">
-                </label>
-
-                <label>
-                    E-Mail
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="test@example.com"
-                        value="<?php echo $data['email']; ?>">
-                </label>
-
-                <label>
-                    Autor
-                    <select name="author">
-                        <option value="0">Markus Raudaschl</option>
-                        <option value="1">Manuel Wieser</option>
-                    </select>
                 </label>
 
                 <label>

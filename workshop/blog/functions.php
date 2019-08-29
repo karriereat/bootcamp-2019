@@ -30,8 +30,8 @@ function siteNotFound() {
     die();
 }
 
-function saveComment($connection, $id, $name, $comment){
-    
+function saveComment($connection, $articleId, $name, $comment){
+
     $query = "INSERT INTO comment 
         (article_id, name, comment, created) 
         VALUES 
@@ -40,9 +40,23 @@ function saveComment($connection, $id, $name, $comment){
 
     $stmt = $connection->prepare($query);
     $stmt->execute([
-        $id, $name, $comment
+        $articleId, $name, $comment
     ]);
 }
+
+function saveArticle($connection, $title, $text, $date, $user){
+    $query = "INSERT INTO article 
+        (title, text, date, user_id, created) 
+        VALUES 
+        (?, ?, ?, ?, CURRENT_TIME());
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute([
+        $title, $text, date('Y-m-d H:i:s', $date), $user
+    ]);
+}
+
 
 function getCommentsByArticleId($connection, $id){
     $comments = [];
