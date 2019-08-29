@@ -28,3 +28,17 @@
 * Scopes (Gültigkeitsbereiche von Variablen)
 * XMLHttpRequest
 * Callbacks und asynchroner Code
+
+# Day 4
+
+* Formular per JavaScript (XHR) abschicken
+* Daten in Datenbank schreiben
+* 3xx Redirect
+* Session Management
+* Login für User
+* Objektorientierte Programmierung
+
+# Day 5
+
+* Package Management (Composer, npm) ???
+* Deploy über SFTP (Seite veröffentlichen)
