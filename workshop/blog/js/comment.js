@@ -28,10 +28,11 @@ function submitForm(event) {
             'http://localhost:8000/comments.php', 
             data, 
             function(response) {
-                if (response.errors) {
+                if (response.errors.length) {
                     showErrors(form, errors);
                 } else {
                     // TODO Kommentar anzeigen
+                    document.location.reload();
                 }
             }
         );

@@ -1,23 +1,3 @@
-function showErrors(errors) {
-    var list = document.createElement('ul');
-    list.setAttribute('class', 'errors');
-    form.insertAdjacentElement('afterbegin', list);
-
-    for (var i = 0; i < errors.length; i++) {
-        var error = errors[i];
-        var item = document.createElement('li');
-        item.innerHTML = error;
-        list.insertAdjacentElement('beforeend', item);
-    }
-}
-
-function clearErrors() {
-    var errors = document.querySelector('.errors');
-    if (errors) {
-        form.removeChild(errors);
-    }
-}
-
 function validateForm() {
     var errors = [];
 
@@ -48,7 +28,7 @@ function submitForm(event) {
     var errors = validateForm();
 
     if (errors.length) {
-        showErrors(errors);
+        showErrors(form, errors);
         return;
     }
 

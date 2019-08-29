@@ -1,10 +1,10 @@
 <article class="article">
-        <div class="article-meta">
-            <?php if($articleDetail): ?>
-                <span><?php echo date('d.m.Y', strtotime($article['date'])); ?></span>
-                <span><?php echo $article['firstname'] . ' ' . $article['surname']; ?></span>
-            <?php endif; ?>
-        </div>
+    <div class="article-meta">
+        <?php if($articleDetail): ?>
+            <span><?php echo date('d.m.Y', strtotime($article['date'])); ?></span>
+            <span><?php echo $article['firstname'] . ' ' . $article['surname']; ?></span>
+        <?php endif; ?>
+    </div>
 
     <h1 class="article-title">
         <a href="article.php?id=<?php echo $article['id']; ?>">

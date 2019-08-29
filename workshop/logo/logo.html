@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            position: relative;
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+            background: lightgray url(terence-and-bud.png) center 70% no-repeat;
+            background-size: contain;
+            transform: scale3d(1, 1, 1);
+            transition: all 0.25s ease-out;
+        }
+        .logo:hover {
+            transform: scale3d(1.125, 1.125, 1.125);
+            cursor: pointer;
+        }
+        .logo > span {
+            position: absolute;
+            top: 51%;
+            left: 50%;
+            display: block;
+            width: 220px;
+            height: 220px;
+            background: white;
+        }
+        .border {
+            border-left: 10px dashed red;
+        }
+        .fill {
+            height: 300px !important;
+        }
+        .logo > span:nth-of-type(1),
+        .logo > span:nth-of-type(8) {
+            transform: translate(-50%, -50%) rotate(calc(1 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(2),
+        .logo > span:nth-of-type(9) {
+            transform: translate(-50%, -50%) rotate(calc(2 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(3),
+        .logo > span:nth-of-type(10) {
+            transform: translate(-50%, -50%) rotate(calc(3 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(4),
+        .logo > span:nth-of-type(11) {
+            transform: translate(-50%, -50%) rotate(calc(4 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(5),
+        .logo > span:nth-of-type(12) {
+            transform: translate(-50%, -50%) rotate(calc(5 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(6),
+        .logo > span:nth-of-type(13) {
+            transform: translate(-50%, -50%) rotate(calc(6 * 51.5deg + 38deg)) translateX(335px); }
+        .logo > span:nth-of-type(7),
+        .logo > span:nth-of-type(14) {
+            transform: translate(-50%, -50%) rotate(calc(7 * 51.5deg + 38deg)) translateX(335px); }
+        .text {
+            text-align: center;
+        }
+        .title {
+            margin: 5rem auto;
+            color: red;
+            font-size: 56px;
+            transform: scaleX(0.8);
+            font-family: 'Arial Black', sans-serif;
+            text-shadow:
+                -2px -2px 0 darkred,
+                2px -2px 0 darkred,
+                -2px 2px 0 darkred,
+                2px 2px 0 darkred;
+        }
+        .terence,
+        .bud {
+            position: absolute;
+            top: 65%;
+            font-size: 36px;
+            color: #fff;
+            font-family: Zapfino, cursive;
+            font-weight: bold;
+            text-shadow:
+                -2px -2px 0 black,
+                2px -2px 0 black,
+                -2px 2px 0 black,
+                2px 2px 0 black;
+        }
+        .terence {
+            left: 15%;
+            transform: rotate(20deg);
+        }
+        .bud  {
+            right: 15%;
+            transform: rotate(-20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="text">
+            <h1 class="title">Quentin’s Blog</h1>
+            <span class="terence">Terence</span>
+            <span class="bud">Bud</span>
+        </div>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="fill"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+    </div>
+</body>
+</html>

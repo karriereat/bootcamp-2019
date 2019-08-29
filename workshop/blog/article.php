@@ -28,8 +28,13 @@ $articleDetail = true;
     </head>
     <body>
         <main class="page">
-            <?php include 'templates/article.php' ?>
-            <?php include 'templates/comment.php' ?>
+            <?php 
+                include 'templates/article.php';
+                foreach ($comments as $comment) {
+                    include 'templates/comment-block.php';
+                }
+                include 'templates/comment-form.php';
+            ?>
         </main>
     </body>
 </html>

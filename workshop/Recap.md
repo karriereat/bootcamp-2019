@@ -33,12 +33,10 @@
 
 * Formular per JavaScript (XHR) abschicken
 * Daten in Datenbank schreiben
-* 3xx Redirect
-* Session Management
+* Redirect (PHP und JavaScript)
+* Session Management (Cookies)
 * Login für User
-* Objektorientierte Programmierung
 
 # Day 5
 
-* Package Management (Composer, npm) ???
 * Deploy über SFTP (Seite veröffentlichen)

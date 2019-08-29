@@ -62,6 +62,8 @@ if (!empty($_POST)) {
 
             $success = true;
             $data = $defaultData;
+
+            header('location: /article.php?id=3');
         }
     }
 } else {
@@ -142,6 +144,7 @@ if (!empty($_POST)) {
             </form>
         </main>
 
+        <script src="/js/errors.js"></script>
         <script src="/js/form.js"></script>
     </body>
 </html>
