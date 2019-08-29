@@ -72,3 +72,29 @@ function getCommentsByArticleId($connection, $id){
 
     return $comments;
 }
+
+function getUserByEmailAndPassword($connection, $email, $password){
+    $query = "SELECT id, firstname, surname, email FROM user WHERE email = ? AND password = ?";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute([$email, $password]);
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+
+function getUserByEmail($connection, $email){
+    $query = "SELECT id, firstname, surname, email, password_hash FROM user WHERE email = ?";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute([$email]);
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function checkLogin(){
+    if(!$_SESSION['login']){
+        header('location: /login.php');
+        die();
+    }
+}

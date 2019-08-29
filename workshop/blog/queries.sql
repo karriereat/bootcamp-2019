@@ -28,3 +28,6 @@ VALUES
 
 /* select all comments by articleId*/
 SELECT * FROM comment WHERE article_id = 1
+
+/* select user by email and password */
+SELECT * FROM `user` WHERE email = ? AND password = ?;
