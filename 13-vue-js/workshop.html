@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgaben</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Aufgaben</h1>
+        <input type="text" v-model="newTodo" v-on:keypress.enter="addTodo">
+        <ul>
+            <li v-for="item in todoList">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                newTodo: '',
+                todoList: []
+            },
+            methods: {
+                addTodo() {
+                    this.todoList.push(this.newTodo);
+                    this.newTodo = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

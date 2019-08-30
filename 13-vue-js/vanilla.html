@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgaben</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Aufgaben</h1>
+        <input type="text" two-way-data-binding="newTodo">
+    </div>
+    <script>
+        const inputField = document.querySelector('[two-way-data-binding]');
+        const app = {
+            get newTodo() {
+                return this.__newTodo__;
+            },
+            set newTodo(text) {
+                this.__newTodo__ = text;
+                inputField.value = text;
+            }
+        };   
+        inputField.addEventListener('input', (event) => {
+            app.newTodo = inputField.value;
+        });
+    </script>
+</body>
+</html>
