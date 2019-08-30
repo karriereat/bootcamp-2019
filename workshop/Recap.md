@@ -43,4 +43,8 @@
 # Day 5
 
 * Deploy über SFTP (Seite veröffentlichen)
+* SQL-Dump exportieren/importieren
 * Objektorientierung
+* Paketverwaltung (Composer, npm)
+* Module Bundling (webpack)
+* Frameworks (Laravel, Vue.js)
